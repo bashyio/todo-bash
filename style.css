@@ -1,0 +1,144 @@
+html,
+body,
+div,
+input,
+textarea,
+p,
+button {
+  font-family: Raleway, Verdana, 'Open Sans', Heveltica;
+  font-size: 14px;
+  line-height: 1.6em;
+  box-sizing: border-box;
+  transition: color .5s, background .5s, border .5s;
+}
+
+body {
+  background: #1F2C38;
+  color: #ecf0f1;
+}
+
+.container {
+  background: #2c3e50;
+  padding: 20px;
+  border-radius: 5px;
+  max-width: 600px;
+  margin: 50px auto;
+  position: relative;
+}
+
+.to-do-form {
+  margin-top: 15px;
+  padding-top: 5px;
+  border-top: solid 2px #34495e;
+}
+
+label[for='newToDo'] {
+  padding: 1px 5px;
+  color: #bdc3c7;
+  font-size: 1.2em;
+  font-weight: bold;
+  line-height: 2em;
+}
+
+textarea {
+  border-radius: 5px;
+  background: #1F2C38;
+  border: solid 2px #34495e;
+  outline: none;
+  color: #fff;
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+}
+
+textarea:hover {
+  border-color: #4A6886;
+}
+
+textarea:focus {
+  border-color: #688AAC;
+}
+
+.error,
+.error:focus,
+.error:hover {
+  border-color: #e74c3c;
+}
+
+button[type='submit'],
+button[type='button'] {
+  padding: 10px 20px;
+  border-radius: 5px;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+  border: none;
+}
+
+button[type='button'] {
+  background: #ecf0f1;
+  color: #000;
+}
+
+button[type='submit'] {
+  background: #4A6886;
+  color: #fff;
+}
+
+button[type='submit']:hover,
+button[type='submit']:focus {
+  background: #151E26;
+}
+
+button[type='button']:hover,
+button[type='button']:focus {
+  background: #bdc3c7;
+}
+
+.item {
+  display: block;
+  background: #1F2C38;
+  padding: 15px;
+  border-radius: 3px;
+  padding-right: 55px;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.item .item-inner {
+  line-height: 20px;
+  min-height: 25px;
+}
+
+.item .remove {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: #e74c3c;
+  border: none;
+  border-radius: 2px;
+  color: #fff;
+  width: 25px;
+  height: 25px;
+  font-weight: bold;
+  cursor: pointer;
+  line-height: 20px;
+}
+
+.item .remove:hover,
+.item .remove:focus {
+  background: #c0392b;
+}
+
+.empty {
+  background: #1F2C38;
+  padding: 15px;
+  border-radius: 3px;
+  padding-right: 55px;
+  position: relative;
+  margin-bottom: 5px;
+}
+
+.status {
+  padding: 5px;
+}

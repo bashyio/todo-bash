@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Simple To-Do Application</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h3>To-Do List</h3>
+    <div class="empty">List items will display here...</div>
+    <div class="list"></div>
+    <form class="to-do-form" id="toDoForm">
+      <label for="newToDo">New To-Do</label>
+      <textarea id="newToDo" maxlength="500" class="text" disabled></textarea>
+      <div id="statusToDo" class="status"></div>
+      <button type="submit">Add to List</button> <button type="button" id="clearList">Clear List</button>
+    </form>
+  </div>
+  <script src="app.js"></script>
+</body>
+
+</html>

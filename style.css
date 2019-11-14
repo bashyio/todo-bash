@@ -30,6 +30,7 @@ body {
   margin-top: 15px;
   padding-top: 5px;
   border-top: solid 2px #34495e;
+  overflow: hidden;
 }
 
 label[for='newToDo'] {
@@ -73,6 +74,8 @@ button[type='button'] {
   cursor: pointer;
   outline: none;
   border: none;
+  float: left;
+  margin: 0 5px 0 0;
 }
 
 button[type='button'] {
@@ -140,5 +143,36 @@ button[type='button']:focus {
 }
 
 .status {
+  width: auto;
   padding: 5px;
+  float: left;
+  line-height: 30px;
+}
+
+warning {
+  font-weight: bold;
+  color: #c6e1f3;
+}
+
+span.yes {
+  color: #2ecc71;
+}
+
+span.yes:hover,
+span.yes:focus {
+  color: #27ae60;
+}
+
+span.no {
+  color: #e74c3c;
+}
+
+span.no:hover,
+span.no:focus {
+  color: #c0392b;
+}
+
+#clearYes,
+#clearNo {
+  cursor: pointer;
 }

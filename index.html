@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="UTF-8">
-  <title>Simple To-Do Application</title>
+  <title>To-Do Application</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 
@@ -15,10 +15,11 @@
     <form class="to-do-form" id="toDoForm">
       <label for="newToDo">New To-Do</label>
       <textarea id="newToDo" maxlength="500" class="text" disabled></textarea>
-      <div id="statusToDo" class="status"></div>
       <button type="submit">Add to List</button> <button type="button" id="clearList">Clear List</button>
+      <div id="statusToDo" class="status"></div>
     </form>
   </div>
+  <script src="functions.js"></script>
   <script src="app.js"></script>
 </body>
 

@@ -3,8 +3,17 @@ const newToDoArea = document.getElementById("newToDo")
 const status = document.getElementById("statusToDo")
 const empty = document.querySelector(".empty")
 const listMain = document.querySelector('.list')
-const toDoList = fetchList()
-renderToDo(toDoList)
+const cLocation = location.href
+const dateTimeFormat = "YYYY-MM-DD HH:mm:ss";
+const baseUrl = cLocation.substr(cLocation.length - 10, 10) == 'index.html' ? cLocation.substr(0, cLocation.length - 10) : cLocation
+let toDoList
+let started = false
+
+const startToDo = async (fRequest = 0, wipeText = 0) => {
+  toDoList = await fetchList(fRequest)
+  renderToDo(toDoList, wipeText)
+  started = true
+}
 
 newToDoArea.addEventListener('input', e => {
   resizeTextArea()
@@ -20,7 +29,6 @@ document.getElementById('toDoForm').addEventListener('submit', e => {
       'id': listId,
       'value': text
     }
-
     toDoList.toDos.push(toDo)
     saveToDo(toDoList)
     renderToDo(toDoList)
@@ -31,9 +39,8 @@ document.getElementById('toDoForm').addEventListener('submit', e => {
 })
 
 window.addEventListener('storage', (e) => {
-  if (e.key === 'toDoList') {
-    const toDoList = fetchList()
-    renderToDo(toDoList)
+  if (e.key === 'toDoList' && started) {
+    startToDo(0, 0)
   }
 })
 
@@ -66,3 +73,5 @@ document.getElementById('clearList').addEventListener('click', e => {
   status.appendChild(document.createTextNode(' / '))
   status.appendChild(clearNo)
 })
+
+startToDo(1)

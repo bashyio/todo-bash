@@ -76,10 +76,8 @@ const saveRequest = (toDoList) => {
   const result = tryFetch(baseUrl + 'data-io.php?rType=saveList', {
     method: 'POST',
     body: formData
-  }, 3).then((response) => {
-    return response.text()
-  }).then((list) => {
-    console.log(list)
+  }, 3).catch((e) => {
+    console.log(e)
   })
 }
 

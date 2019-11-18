@@ -57,13 +57,9 @@ const newList = () => {
     "lastSaved": moment().format(dateTimeFormat)
   }
 }
+
 const fetchRequest = () => {
-  const result = tryFetch(baseUrl + 'data-io.php', {
-    method: 'post',
-    body: JSON.stringify({
-      rType: 'get'
-    })
-  }, 3).then((response) => {
+  const result = tryFetch(baseUrl + 'data-io.php?rType=fetchList', {}, 3).then((response) => {
     return response.json()
   }).then((responseJson) => {
     return responseJson
@@ -74,9 +70,23 @@ const fetchRequest = () => {
   return result
 }
 
+const saveRequest = (toDoList) => {
+  const formData = new FormData()
+  formData.append('toDoList', JSON.stringify(toDoList))
+  const result = tryFetch(baseUrl + 'data-io.php?rType=saveList', {
+    method: 'POST',
+    body: formData
+  }, 3).then((response) => {
+    return response.text()
+  }).then((list) => {
+    console.log(list)
+  })
+}
+
 const saveToDo = (toDoList) => {
   toDoList.lastSaved = moment().format("YYYY-MM-DD HH:mm:ss");
   localStorage.setItem('toDoList', JSON.stringify(toDoList))
+  saveRequest(toDoList)
 }
 
 const removeToDo = function () {

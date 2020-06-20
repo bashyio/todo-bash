@@ -4,7 +4,9 @@
   "description": "Simple To-Do Application",
   "main": "src/app.js",
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "express": "^4.17.1",
+    "postman-request": "^2.88.1-postman.23"
   },
   "devDependencies": {},
   "scripts": {

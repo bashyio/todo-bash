@@ -1,7 +1,7 @@
 .vscode
 todo.code-workspace
 data.json
-node_modules
+node_modules/
 build
 npm-debug.log
 .env
